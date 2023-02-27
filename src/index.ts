@@ -1,10 +1,5 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
-/* eslint-disable @typescript-eslint/object-curly-spacing */
 /* eslint-disable no-case-declarations */
-/* eslint-disable @typescript-eslint/restrict-plus-operands */
-/* eslint-disable @typescript-eslint/prefer-nullish-coalescing */
-/* eslint-disable @typescript-eslint/indent */
-/* eslint-disable @typescript-eslint/naming-convention */
+
 import http from 'http';
 import url from 'url';
 
@@ -55,6 +50,8 @@ const server = http.createServer((req, resp) => {
 
   resp.end();
 });
+
+server.on('error', () => {});
 
 server.on('listening', () => {
   console.log('Listening http://localhost: ' + PORT);
